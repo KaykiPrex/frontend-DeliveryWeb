@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos Ya</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/faviconpy.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#!">
+                    <img src="/assets/monolith-pedidosya.svg" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Ingresá</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Registrate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Soporte</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="main_container">
+            <div class="py-5 bg-image-full hero" style="background-image: url('/assets/hero.jpg')">
+                <div class="container px-5 text-lg-center text-white">
+                    <h1>¡Volá con tu delivery online!</h1>
+                    <p>Restaurantes , bares , panaderias ¡y más!</p>
+
+                    <form class="row">
+                        <div class="col-12  text-lg-start">
+                            <p class="fw-bolder">Ingresa tu localidad</p>
+                        </div>
+
+                        <div class="col-2">
+                            <select class="form-select" id="validationCustom" required>
+                                <option selected disabled value="">Seleccionar</option>
+                                <option value="1">Avellaneda</option>
+                                <option value="2">Escalada</option>
+                                <option value="3">Lanus</option>
+                            </select>
+                        </div>
+                        <div class="col-8">
+                            <input type="search" class="form-control me-2 rounded-1"
+                                placeholder="Pide tu comida favorita al instante...">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" id="search_product"
+                                class="btn btn-outline-danger bg-dark mb-3">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <p>
+            Demo - Pagina de delivery web en la cursada de
+            <a href="">Metodologias Agiles</a>
+            - Dictadas por los profesores : Damian Santos -
+            <a href="">Universidad Nacional de Lanus</a>.
+        </p>
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>

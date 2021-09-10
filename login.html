@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Delivery web</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Registra tu comercio</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>En unos simples pasos puedes impulsar tu negocio</span>
+                <input type="text" id="input_tienda-nombre" placeholder="Nombre" />
+                <input type="text" id="input_tienda-dir" placeholder="Dirección" />
+                <input type="text" id="input_tienda-tel" placeholder="Telefono" />
+                <input type="mail" id="input_tienda-mail" placeholder="Correo" />
+                <input type="password" id="input_tienda-pass" placeholder="Contraseña" />
+                <button id="btn_tienda" type="submit">Registrarse</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Registrarse</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>Pide tu comida favorita al instante, que estás esperando?</span>
+                <input type="text" placeholder="Nombre" />
+                <input type="text" placeholder="Telefono" />
+                <input type="email" placeholder="Correo" />
+                <input type="password" placeholder="Contraseña" />
+                <a href="#">Olvidaste tu contraseña?</a>
+                <button>Registrarse</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Tu comida favorita al instante</h1>
+                    <p>A caso no eres cliente? Que estás esperando para unirte? te estás perdiendo de exquisitos platos</p>
+                    <button class="ghost" id="signIn">Registrate</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Impulsa tu comercio</h1>
+                    <p>Animate y publica toda tu comida en internet , mucha gente te está esperando.</p>
+                    <button class="ghost" id="signUp">Registrate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Demo - Pagina de delivery web en la cursada de
+            <a href="">Metodologias Agiles</a>
+            - Dictadas por los profesores : Damian Santos -
+            <a href="">Universidad Nacional de Lanus</a>.
+        </p>
+    </footer>
+    <script src="/js/login.js" defer></script>
+</body>
+
+</html>
