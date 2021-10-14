@@ -1,46 +1,38 @@
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+const user = document.getElementById("user");
+const pass = document.getElementById("pass");
+const btn_login = document.getElementById("btn_login");
+const btn_signup = document.getElementById("signUp");
 
-const tienda_nombre = document.querySelector("#input_tienda-nombre");
-const tienda_dir = document.querySelector("#input_tienda-dir");
-const tienda_tel = document.querySelector("#input_tienda-tel");
-const tienda_mail = document.querySelector("#input_mail");
-const tienda_pass = document.querySelector("#input_pass");
-
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
-
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
-
-
-
-btn_tienda.addEventListener("click", (e) =>{
-    e.preventDefault(); 
-    guardarTienda();
-    window.location.replace ("success.html");
+btn_login.addEventListener('click', (e) => {
+    e.preventDefault();
+    validarUsuario();
+})
+btn_signup.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.replace("signup.html");
 })
 
-function guardarTienda(){
-      var url = 'http://localhost:8080/store/save';
-      var data = {
-                'name': tienda_nombre.value,
-                'phone': tienda_tel.value,
-                'address': tienda_dir.value,
-                'latitude': 5540,
-                'longitude': 3584,
-                'distance': 20};
-      
-      fetch(url, {
-        method: 'POST', 
-        body: JSON.stringify(data), 
-        headers:{
-          'Content-Type': 'application/json'
+async function validarUsuario() {
+    var url = 'http://localhost:8080/usuario/login';
+    var data = {
+        'email': user.value,
+        'password': pass.value
+    };
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
         }
-      }).then(res => res.json())
-      .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response));
+    }).then(res => res.json()
+        .then(data => {
+            if (data != null) {
+                console.log(JSON.stringify(data));
+                sessionStorage.setItem('login', JSON.stringify(data));
+                window.location.replace("index.html");
+            }
+        }))
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
 }

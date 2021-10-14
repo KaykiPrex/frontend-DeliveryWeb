@@ -13,31 +13,15 @@
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/common/nav-utils.js"></script>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-5">
-                <a class="navbar-brand" href="#!">
-                    <img src="/assets/monolith-pedidosya.svg" alt="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Ingresá</a></li>
-                        <li class="nav-item"><a class="nav-link" href="signup.html">Registrate</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Soporte</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <header id="header">
     </header>
     <main>
         <div id="main_container">
@@ -73,19 +57,17 @@
 
         </div>
     </main>
-    <footer>
-        <p>
-            Demo - Pagina de delivery web en la cursada de
-            <a href="">Metodologias Agiles</a>
-            - Dictadas por los profesores : Damian Santos -
-            <a href="">Universidad Nacional de Lanus</a>.
-        </p>
-    </footer>
+    <footer id="footer"></footer>
     <!-- JavaScript Bundle with Popper -->
+    <script type="module" src="/js/scripts.js"></script>
+    <script type="module" src="/common/menu-store.js"></script>
+    <script type="module" src="/common/menu-unregistered.js"></script>
+    <script type="module" src="/common/menuprofile-store.js"></script>
+    <script type="module" src="/js/index-store.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
-    <script src="/js/scripts.js"></script>
+    <script src="/common/footer.js"></script>
 </body>
 
 </html>

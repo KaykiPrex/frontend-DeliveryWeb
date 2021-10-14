@@ -1,16 +1,27 @@
+import { menuUnregistered } from "../common/menu-unregistered.js";
+import { menuProfileStore } from "../common/menuprofile-store.js";
+
 const grid = document.querySelector("#grid_gallery");
 const h1 = document.getElementById("title");
 
-function receive() {
-    const params = new URLSearchParams(window.location.search);
+if (sessionStorage["login"]) { // Pasar a una funcion en Nav-utils
+    menuProfileStore()
+    const nav_login = document.querySelector("#nav_demo");
+    const nav_salir = document.getElementById("nav_salir");
+  
+    let storage_login = JSON.parse(sessionStorage.getItem("login"));
+  
+    var newtext = document.createTextNode(" " + storage_login.name);
+    nav_login.appendChild(newtext);
+  } else menuUnregistered();
 
-    
+function receive() {
+    const params = new URLSearchParams(window.location.search);   
     // You can access specific parameters:
     console.log(params.get('arg1'));
 
     traerProductos(params.get('arg1'));
 }
-
 window.onload = receive;
 
 function traerProductos(storeid) {
@@ -22,11 +33,9 @@ function traerProductos(storeid) {
                 newItem(element);
             });
         })
-
 }
 
-function newItem(data) {
-  
+function newItem(data) { 
     const h2 = document.createElement('h1');
     const precio = document.createElement('p');
     const reco = document.createElement('p');
@@ -44,7 +53,6 @@ function newItem(data) {
     div_item.appendChild(div_item_details);
 
     grid.appendChild(div_item);
-
 }
 
 
