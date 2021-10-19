@@ -8,9 +8,10 @@ if (sessionStorage["login"]) { //Pasar a nav-utils
   menuProfileStore();
   const nav_login = document.querySelector("#nav_demo");
   const nav_salir = document.getElementById("nav_salir");
+  const num_productos = document.getElementById("carrito_numero"); 
+  num_productos.innerHTML=`${sessionStorage.getItem("carrito")}`;
 
   let storage_login = JSON.parse(sessionStorage.getItem("login"));
-
   var newtext = document.createTextNode(" " + storage_login.name);
   nav_login.appendChild(newtext);
 } else menuUnregistered();
