@@ -132,3 +132,27 @@ select:focus {
 .tabs .tab-2:last-child [type="radio"]:checked + div {
   margin-left: -100%;
 }
+
+.qty {
+  /*position: fixed;
+  right: auto;
+  top: 6px;*/
+  top:6px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  color: #FFF;
+  background-color: #D10024;
+  
+}
+.header__titulo{
+  font-size: 2rem;
+  font-family: "Arvo";
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
