@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo");
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 body,
 html {
   display: -webkit-box;
@@ -83,27 +84,21 @@ h1 {
   counter-increment: item-counter;
 }
 .item:nth-of-type(1) {
-  background-image: url("/IMG_DB/store_ugis.jpg");
+  background-image: url("/IMG_DB/product_empanadas.jpg");
 }
 .item:nth-of-type(2) {
-  background-image: url("/IMG_DB/store_solar.jpg");
+  background-image: url("/IMG_DB/product_hamburguesa.jpg");
 }
 
 .item:nth-of-type(3) {
-  background-image: url("/IMG_DB/store_burguer.jpg");
+  background-image: url("/IMG_DB/product_pancho.jpg");
 }
 
 .item:nth-of-type(3n) {
-  background-image: url("/IMG_DB/store_larana.jpg");
+  background-image: url("/IMG_DB/product_papas.jpg");
 }
 .item:nth-of-type(4n) {
-  background-image: url("/IMG_DB//store_uco.jpg");
-}
-.item:nth-of-type(5n) {
-  background-image: url("/IMG_DB/store_pippo.jpg");
-}
-.item:nth-of-type(6n) {
-  background-image: url("/IMG_DB/store_orientaldragon.jpg");
+  background-image: url("/IMG_DB//product_pizza.jpg");
 }
 .item:after {
   content: "";
@@ -165,20 +160,18 @@ h1 {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
-.p-store {
-  font-size: 1.2rem;
-  font-family: "Arvo";
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+.producto {
+  font-family: 'Abril Fatface', cursive;
+  color: rgb(71, 71, 71);
+  display: inline-block;
   text-transform: lowercase
 }
-.p-store::first-letter{
+.producto::first-letter{
   text-transform: uppercase;
 }
-.p-store-details {
+.descripcion {
   text-transform: lowercase
 }
-.p-store-details::first-letter{
+.descripcion::first-letter{
   text-transform: uppercase
 }

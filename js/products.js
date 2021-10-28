@@ -44,20 +44,23 @@ function traerProductos(storeid) {
 }
 
 function newItem(data) {
-  const h2 = document.createElement("h1");
+  let prod = document.createElement("h1");
+  const desc = document.createElement("p");
   const precio = document.createElement("p");
-  const reco = document.createElement("p");
   const div_item_details = document.createElement("div");
   const div_item = document.createElement("div");
+  precio.className= "text-light bg-danger";
+  prod.className= "producto";
+  desc.className= "descripcion";
 
-  h2.textContent = `${data.name}`;
-  precio.textContent = `Descripcion : ${data.description}`;
-  reco.textContent = `Precio : ${data.price}`;
+  prod.textContent = data.name;
+  desc.textContent = `Descripcion : ${data.description}`;
+  precio.textContent = `Precio : $ ${data.price}`;
   div_item_details.className = "item__details";
   div_item.className = "item item--large";
-  div_item_details.appendChild(h2);
+  div_item_details.appendChild(prod);
+  div_item_details.appendChild(desc);
   div_item_details.appendChild(precio);
-  div_item_details.appendChild(reco);
   div_item.appendChild(div_item_details);
 
   grid.appendChild(div_item);

@@ -31,30 +31,37 @@ function traerStore(producto) {
   fetch(`http://localhost:8080/store/productname?name=${producto}`)
     .then((res) => res.json())
     .then((data) => {
+      if (data.length == 0) {
+        document.getElementById("title_search").textContent = "No se encontró el producto seleccionado en los negocios cercanos. . . siga participando";
+        
+      }else{
       data.forEach((element) => {
         newItem(element);
-      });
+      });}
     });
 }
 
 function newItem(data) {
   let numdiv = data.name;
 
-  const h2 = document.createElement("h1");
-  const precio = document.createElement("p");
-  const reco = document.createElement("p");
+  const store = document.createElement("h1");
+  const dir = document.createElement("p");
+  const tel = document.createElement("p");
   const div_item_details = document.createElement("div");
   const div_item = document.createElement("div");
+  store.className="p-store text-light bg-danger";
+  dir.className="p-store-details";
+  tel.className="p-store-details";
 
-  h2.textContent = `${data.name}`;
-  precio.textContent = `Direccion : ${data.address}`;
-  reco.textContent = `Telefono : ${data.phone}`;
+  store.textContent = `${data.name}`;
+  dir.textContent = `Direccion : ${data.address}`;
+  tel.textContent = `Telefono : ${data.phone}`;
   div_item_details.className = "item__details";
   div_item.className = "item item--large";
   div_item.id = `autodiv${numdiv}`;
-  div_item_details.appendChild(h2);
-  div_item_details.appendChild(precio);
-  div_item_details.appendChild(reco);
+  div_item_details.appendChild(store);
+  div_item_details.appendChild(dir);
+  div_item_details.appendChild(tel);
   div_item.appendChild(div_item_details);
 
   grid.appendChild(div_item);
