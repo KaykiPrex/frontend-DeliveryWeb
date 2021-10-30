@@ -25,9 +25,6 @@ if (sessionStorage["login"]) {
 
 function receive() {
   const params = new URLSearchParams(window.location.search);
-  // You can access specific parameters:
-  console.log("parametro: " + params.get("arg1"));
-
   traerProductos(params.get("arg1"));
 }
 window.onload = receive;
@@ -49,9 +46,9 @@ function newItem(data) {
   const precio = document.createElement("p");
   const div_item_details = document.createElement("div");
   const div_item = document.createElement("div");
-  precio.className= "text-light bg-danger";
-  prod.className= "producto";
-  desc.className= "descripcion";
+  precio.className = "text-light bg-danger";
+  prod.className = "producto";
+  desc.className = "descripcion";
 
   prod.textContent = data.name;
   desc.textContent = `Descripcion : ${data.description}`;
@@ -67,24 +64,18 @@ function newItem(data) {
 
   if (sessionStorage["carrito"]) {
     const num_productos = document.getElementById("carrito_numero");
-    
+
     div_item.addEventListener("click", (e) => {
       e.preventDefault();
       contador_productos += 1;
       num_productos.innerHTML = `${contador_productos}`;
-      //INICIO carrito de compras
+
       var carritoJSON = [];
-      //suma_carrito.push(JSON.parse(sessionStorage.getItem("carritoJSON")));CASI CASI
-      if (sessionStorage.getItem("carritoJSON").length>0 ) carritoJSON = JSON.parse(sessionStorage.getItem("carritoJSON")); // Checkear SI JSON tiene datos entonces hacer eso !!!
-      //
+      if (sessionStorage.getItem("carritoJSON").length > 0) carritoJSON = JSON.parse(sessionStorage.getItem("carritoJSON"));
       carritoJSON.push(data);
-      sessionStorage.setItem("carritoJSON", JSON.stringify( carritoJSON));
-      //
+      sessionStorage.setItem("carritoJSON", JSON.stringify(carritoJSON));
       sessionStorage.setItem("carrito", contador_productos);
-      //sessionStorage.setItem("carritoJSON", JSON.stringify(data)); OK FUNCIONA BORRAR cuando esta completo
-      //console.log(data);
       console.log(JSON.parse(sessionStorage.getItem("carritoJSON")));
-      //window.location.href = "index.html"; // enlace a la siguiente pagina // FIN carrito de compras
     });
   }
 }

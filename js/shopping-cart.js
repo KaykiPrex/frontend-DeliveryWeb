@@ -15,32 +15,23 @@ if (sessionStorage["login"]) {
 
   num_productos.innerHTML = `${sessionStorage.getItem("carrito")}`;
   let storage_login = JSON.parse(sessionStorage.getItem("login"));
-
   var newtext = document.createTextNode(" " + storage_login.name);
   nav_login.appendChild(newtext);
 } else menuUnregistered();
 
-// --------
 if (sessionStorage.getItem("carritoJSON").length > 0) {
   let data = JSON.parse(sessionStorage.getItem("carritoJSON"));
-  /*let list = document.createElement("ul");
-  list.className="list-group";*/
   let total = 0;
   for (let i of data) {
-    /*let item = document.createElement("li");
-    item.className="list-group-item";
-    item.innerHTML = `Producto: ${JSON.stringify(i)}`;*/ //JSON.stringify(i)
-    /*list.appendChild(item);*/ newItem(i); 
-    total += i.price ;
+    newItem(i);
+    total += i.price;
   }
   totalVista(total);
-  //document.getElementById("listaProductos").appendChild(list);
 }
 
 function newItem(data) {
   const producto = document.createElement("h2");
   const precio = document.createElement("p");
-
   const div_card_body = document.createElement("div");
   const div_card = document.createElement("div");
 
@@ -60,7 +51,6 @@ function newItem(data) {
 function totalVista(data) {
   const total = document.createElement("h2");
   const precio = document.createElement("p");
-
   const div_card_body = document.createElement("div");
   const div_card = document.createElement("div");
 

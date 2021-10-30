@@ -13,14 +13,14 @@ signInButton.addEventListener("click", () => {
 btn_tienda.addEventListener("click", (e) => {
   guardarTienda();
   e.preventDefault();
-  //If si funciona bien "success" y mal "ERROR"
+  //Si funciona bien "success" y mal "ERROR"
   window.location.replace("success.html");
 });
 
 btn_cliente.addEventListener("click", (e) => {
   guardarCliente();
   e.preventDefault();
-  //If si funciona bien "success" y mal "ERROR"
+  //Si funciona bien "success" y mal "ERROR"
   window.location.replace("success.html");
 });
 
