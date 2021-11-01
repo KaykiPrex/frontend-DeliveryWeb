@@ -28,7 +28,6 @@ function loginUsuario() {
       const milista = document.getElementById("lista_productos");
       JSON.parse(sessionStorage.getItem("login")).store.products.forEach((element) => {
         newItem(element,milista);
-        console.log(element);
       });
       const btn_addproducts = document.getElementById("btn_addproducts");
       const in_name = document.getElementById("input_name");
@@ -70,7 +69,7 @@ function guardarProducto(name, desc, price) {
     name: name.value,
     description: desc.value,
     price: price.value,
-    pic: "algo.jpg",
+    pic: "empty.jpg",
   };
   console.log(data);
   fetch(url, {
