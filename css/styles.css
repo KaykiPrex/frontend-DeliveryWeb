@@ -54,7 +54,7 @@ select:focus {
 }
 
 .tabs {
-  height: 90vh;
+  height: auto;
   padding: 2vh 2vw;
   display: block;
   display: -webkit-flex;
@@ -65,6 +65,7 @@ select:focus {
   flex-wrap: wrap;
   margin: 0;
   overflow: hidden;
+  background-color: rgb(122, 122, 122);
 }
 .tabs [class^="tab"] label,
 .tabs [class*=" tab"] label {

@@ -25,6 +25,11 @@ function loginUsuario() {
       
       if ((JSON.parse(sessionStorage.getItem("login")).rol == "store")) { 
       menuStore();
+      const milista = document.getElementById("lista_productos");
+      JSON.parse(sessionStorage.getItem("login")).store.products.forEach((element) => {
+        newItem(element,milista);
+        console.log(element);
+      });
       const btn_addproducts = document.getElementById("btn_addproducts");
       const in_name = document.getElementById("input_name");
       const in_desc = document.getElementById("input_description");
@@ -78,6 +83,30 @@ function guardarProducto(name, desc, price) {
     .then((res) => res.json())
     .catch((error) => console.error("Error:", error))
     .then((response) => console.log("Success:", response));
+}
+
+function newItem(data,milista) {
+  
+  const producto = document.createElement("h2");
+  const desc = document.createElement("p");
+  const precio = document.createElement("p");
+  const div_card_body = document.createElement("div");
+  const div_card = document.createElement("div");
+
+  producto.textContent = `${data.name}`;
+  precio.textContent = `$ ${data.price}`;
+  desc.textContent = data.description;
+  div_card_body.className = "card-body";
+  div_card.className = "card";
+  producto.className = "card-title";
+  precio.className = "card-text";
+  desc.className = "card-text";
+  div_card_body.appendChild(producto);
+  div_card_body.appendChild(desc);
+  div_card_body.appendChild(precio);
+  div_card.appendChild(div_card_body);
+
+  milista.appendChild(div_card);
 }
 
 loginUsuario();

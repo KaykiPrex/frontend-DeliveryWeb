@@ -55,6 +55,8 @@ function newItem(data) {
   precio.textContent = `Precio : $ ${data.price}`;
   div_item_details.className = "item__details";
   div_item.className = "item item--large";
+  //div_item.style.backgroundImage=`url(/IMG_DB/product_${data.pic})`; //Change Image
+  checkImage(`/IMG_DB/product_${data.pic}`, function(){ div_item.style.backgroundImage=`url(/IMG_DB/product_${data.pic})`; }, function(){ div_item.style.backgroundImage=`url(/IMG_DB/product_empty.jpg)`; } );
   div_item_details.appendChild(prod);
   div_item_details.appendChild(desc);
   div_item_details.appendChild(precio);
@@ -78,4 +80,11 @@ function newItem(data) {
       console.log(JSON.parse(sessionStorage.getItem("carritoJSON")));
     });
   }
+}
+
+function checkImage(imageSrc, good, bad) {
+  var img = new Image();
+  img.onload = good; 
+  img.onerror = bad;
+  img.src = imageSrc;
 }
